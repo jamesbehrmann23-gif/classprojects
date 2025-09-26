@@ -1,0 +1,294 @@
+/* Web font for headings (Extra Credit) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+
+:root {
+  --page-bg: rgba(255, 255, 255, 0.94);
+  --text: #222;
+  --muted: #666;
+  --link: #2058b5;
+  --link-hover: #133a79;
+
+  /* Table colors */
+  --header-bg1: #e9f0fb;
+  --header-bg2: #d7e4f8;
+  --header-border: #b7c4d6;
+  --time-col-bg: #f7f8fa;
+  --stripe: #f2f6fb;
+
+  /* Course blocks */
+  --cplus-bg: #ffe17e;
+  --cplus-bd: #e1c057;
+  --web-bg: #c6ffd0;
+  --web-bd: #7ed08b;
+  --ds-bg: #bfe2ff;
+  --ds-bd: #75a8d1;
+  --eng-bg: #ffceb7;
+  --eng-bd: #dd9c7e;
+}
+
+/* Page background */
+.bg {
+  margin: 0;
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 16px;
+  /* ~12pt */
+  line-height: 1.55;
+  background-image: url('https://imgs.search.brave.com/0Bs9sJcdyskG0phD0Wt3tJE8_LYkKzvUtrFS94yRcYM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzI4LzEy/L2YyLzI4MTJmMjY1/MGY1OTQ3YjI2OTJl/MzM0YjNmNDRiNWNh/LmpwZw');
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+/* Centered content panel over background (Extra Credit) */
+.page {
+  max-width: 960px;
+  margin: 40px auto;
+  background: var(--page-bg);
+  padding: 24px 28px;
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.16);
+}
+
+/* Top header and name */
+.header {
+  margin-bottom: 10px;
+}
+
+.page-title {
+  font-family: "Poppins", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 30pt;
+  /* requirement: extra large name */
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  padding: 16px 18px;
+  color: #0f2242;
+  text-decoration: underline;
+  background: linear-gradient(180deg, #eef5ff, #dfeaff);
+  border-radius: 10px;
+  border: 1px solid #cddaf3;
+}
+
+/* General text */
+p {
+  margin: 0 0 0.9em 0;
+  /* 75–100% of paragraph font size */
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+.section {
+  margin-top: 1.2em;
+}
+
+.section-title {
+  font-family: "Poppins", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin: 1.2em 0 0.3em 0;
+  /* spacing above and below heading */
+  color: #10203d;
+}
+
+.info-list,
+.books-list {
+  margin: 0 0 0.9em 1.2em;
+}
+
+/* Haiku */
+.haiku-intro {
+  color: var(--muted);
+}
+
+.haiku {
+  max-width: 34ch;
+  margin: 8px auto 0.9em auto;
+  padding: 12px 16px;
+  text-align: center;
+  font-style: italic;
+  background: #ffffff;
+  border-left: 4px solid #d0dcf4;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Portrait */
+.portrait-link {
+  float: right;
+  margin: 0 0 16px 24px;
+  border-radius: 12px;
+  display: block;
+}
+
+.portrait {
+  display: block;
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  border: 6px solid #fff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.portrait-link:hover .portrait,
+.portrait-link:focus .portrait {
+  transform: scale(1.02);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+}
+
+/* Responsive image behavior */
+@media (max-width: 800px) {
+  .portrait-link {
+    float: none;
+    margin: 6px auto 16px auto;
+    max-width: 80%;
+  }
+
+  .portrait {
+    width: 100%;
+  }
+}
+
+/* Schedule table */
+.schedule-table {
+  width: 100%;
+  table-layout: fixed;
+  /* equal column widths for days */
+  border-collapse: collapse;
+  border: 1px solid #cfcfcf;
+  /* outer border */
+  background: #fff;
+  font-size: 0.97rem;
+}
+
+.schedule-table thead th {
+  padding: 10px;
+  text-align: left;
+  /* avoid default center */
+  color: #0f2242;
+  background: linear-gradient(180deg, var(--header-bg1), var(--header-bg2));
+  border-bottom: 2px solid var(--header-border);
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 8px;
+  vertical-align: top;
+  border: 1px solid #e2e2e2;
+}
+
+/* Time column and day columns */
+.time-col {
+  width: 106px;
+  /* fixed time column width */
+  text-align: right;
+  color: #444;
+  font-weight: 600;
+  background: var(--time-col-bg);
+}
+
+.day-col {
+  width: calc((100% - 106px) / 5);
+}
+
+/* Subtle alternating stripes for empty cells (Extra Credit) */
+.schedule-table tbody tr:nth-child(even) td:empty {
+  background: var(--stripe);
+}
+
+/* Row heights for 30-minute lines */
+.schedule-table tbody th,
+.schedule-table tbody td {
+  height: 34px;
+}
+
+/* Course color blocks (background + darker border) */
+.cplus {
+  background: var(--cplus-bg);
+  border-color: var(--cplus-bd);
+}
+
+.webprogramming {
+  background: var(--web-bg);
+  border-color: var(--web-bd);
+}
+
+.datastructures {
+  background: var(--ds-bg);
+  border-color: var(--ds-bd);
+}
+
+.dailyclass {
+  background: var(--eng-bg);
+  border-color: var(--eng-bd);
+}
+
+/* Modal (CSS-only) for enlarged portrait (Extra Credit) */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 1000;
+}
+
+.modal:target {
+  display: block;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  position: relative;
+  max-width: min(92vw, 900px);
+  margin: 6vh auto;
+  z-index: 1;
+}
+
+.modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 8px solid #fff;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #111;
+  text-decoration: none;
+  text-align: center;
+  line-height: 34px;
+  font-size: 26px;
+  border: 1px solid #d7d7d7;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Small tweaks */
+ol,
+ul {
+  padding-left: 1.25em;
+}
+
+blockquote {
+  margin: 0.5em 0 0.9em 0;
+}
